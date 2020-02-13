@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.87
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Schiffeversenken", "Schiffeversenken.csproj", "{FF2EE49D-A39F-4C79-86CE-31472E1D34CC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF2EE49D-A39F-4C79-86CE-31472E1D34CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF2EE49D-A39F-4C79-86CE-31472E1D34CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF2EE49D-A39F-4C79-86CE-31472E1D34CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF2EE49D-A39F-4C79-86CE-31472E1D34CC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5D0CEDDC-0941-43A6-B79D-A5DBEBF995F8}
+	EndGlobalSection
+EndGlobal
