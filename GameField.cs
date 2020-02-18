@@ -22,17 +22,18 @@ namespace Schiffeversenken
         public Random random;
         public int[,] intArrayField { get; set; }
         public PlayField playfield = new PlayField();
-        
-        public enum direction { NORTH, EAST, SOUTH, WEST };
-
-
-
+        public List<Ship> shipList = new List<Ship>();
 
         public GameField(int fieldlenght, Random random)
         {
             this.fieldlenght = fieldlenght;
             intArrayField = new int[fieldlenght, fieldlenght];
             this.random = random;
+            for (int i = 0; i<5; i++)
+            {
+                Ship ship = new Ship(i+1);
+                shipList.Add(ship);
+            }
         }
         public void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -64,11 +65,10 @@ namespace Schiffeversenken
             }
             rectangle.Margin = new Thickness(2);
             playfield.PlayGrid.Children.Add(rectangle);
-            //Player2.PlayGrid.Children.Add(rectangle);
+
             Grid.SetColumn(rectangle, y + 1);
             Grid.SetRow(rectangle, x + 1);
-            //Player2.PlayGrid.Children.Clear();
-            //drawEnemyGameField(AI, Player2);
+
             var myWin = (MainWindow)Application.Current.MainWindow;
             myWin.playerVsComputer.PlayerSHots();
 
@@ -307,16 +307,10 @@ namespace Schiffeversenken
         }
         public void generateRandomPlayfield()
         {
-            Ship ship = new Ship(5);
-            placeShipRandom(ship);
-            Ship ship2 = new Ship(4);
-            placeShipRandom(ship2);
-            Ship ship3 = new Ship(3);
-            placeShipRandom(ship3);
-            Ship ship4 = new Ship(3);
-            placeShipRandom(ship4);
-            Ship ship5 = new Ship(2);
-            placeShipRandom(ship5);
+            for(int i = 0; i < 5; i++)
+            {
+                placeShipRandom(shipList[i]);
+            }
         }
         private bool placeShipRandom(Ship ship)
         {

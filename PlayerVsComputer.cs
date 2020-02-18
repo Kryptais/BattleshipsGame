@@ -50,7 +50,6 @@ namespace Schiffeversenken
         }
         public  void AIShots()
         {
-           
             // 0 = water
             //1 = ship
             //2 = hit but no ship

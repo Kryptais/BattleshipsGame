@@ -37,9 +37,14 @@ namespace Schiffeversenken
             (PlaceShips.Content as Grid).Children.Add(PlayerPlacement.playfield);
             Grid.SetColumn(PlayerPlacement.playfield, 2);
             Grid.SetRow(PlayerPlacement.playfield, 1);
-        
 
-            
+            if (PlayerhasSHOT == true)
+            {
+                //Thread.Sleep(1000);
+                playerVsComputer.AIShots();
+                PlayerhasSHOT = false;
+            }
+
         }
         private void PlacingPhase_Clicked(object sender, RoutedEventArgs e)
         {
@@ -76,19 +81,13 @@ namespace Schiffeversenken
             playerVsComputer = new PlayerVsComputer(5, 5, Player, AI, random);
             playerVsComputer.PLayerhasShot += PLayerShoot;//new PlayerVsComputer.MyEventHandler(PLayerShoot);
 
-            if (PlayerhasSHOT == true)
-            {
-                Thread.Sleep(1000);
-                playerVsComputer.AIShots();
-                PlayerhasSHOT = false;
-            }
+
         }
         public void PLayerShoot()
         {
             PlayerhasSHOT = true;
-            //playerVsComputer.AIShots();
+            playerVsComputer.AIShots();
         }
-
         private void Place_Ships_Random(object sender, RoutedEventArgs e)
         {
             //(PlaceShips.Content as Grid).Children.Clear();
