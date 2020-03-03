@@ -67,6 +67,7 @@
     <Compile Include="Schiffe\Destroyer.cs" />
     <Compile Include="Schiffe\Schiffe.cs" />
     <Compile Include="Schiffe\Submarine.cs" />
+    <Compile Include="Spiel.cs" />
     <Compile Include="Spieler.cs" />
     <Compile Include="SpielfeldKomponenten\Koordinaten.cs" />
     <Compile Include="alt\PlayerVsComputer.cs" />

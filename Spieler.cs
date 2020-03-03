@@ -33,6 +33,11 @@ namespace Schiffeversenken
             Spielfeld = new Spielfeld();
             schussSpielfeld = new schussSpielfeld();
         }
+        public void ZeichneSpielfeld(GridSpielfeld gridSpielfeld)
+        {
+            gridSpielfeld.updateGUI(Spielfeld);
+        }
+
         public void platziereSchiffe()
         {
             //Random class creation stolen from http://stackoverflow.com/a/18267477/106356
@@ -80,7 +85,7 @@ namespace Schiffeversenken
 
                     foreach(var spielfeldTile in affectedPanels)
                     {
-                        spielfeldTile.Teilbelegung =schiff.Teilbelegung;
+                        spielfeldTile.Teilbelegung = schiff.Teilbelegung;
                     }
                     isOpen = false;
                 }

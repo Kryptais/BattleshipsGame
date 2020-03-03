@@ -6,18 +6,18 @@
              xmlns:local="clr-namespace:Schiffeversenken"
              mc:Ignorable="d" 
              Name="usercontrol"
-             Width="400" Height="{Binding Height, ElementName=usercontrol, Mode=OneWay}"
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+             d:DesignHeight="450" d:DesignWidth="450"
+             SizeChanged="UsercontrolSizeChanged">
+    <Grid x:Name="mainGrid">
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10*"/>
         </Grid.ColumnDefinitions>
-        <Grid Grid.Row="1" Grid.Column="1">
+        <Grid x:Name="spielbaresSpielfeld" Grid.Row="1" Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -52,7 +52,7 @@
             <ToggleButton x:Name="A8"  Grid.Column="0" Grid.Row="7" Width="auto" Height="{Binding Width, ElementName=A1}"/>
             <ToggleButton x:Name="A9"  Grid.Column="0" Grid.Row="8" Width="auto" Height="{Binding Width, ElementName=A1}"/>
             <ToggleButton x:Name="A10" Grid.Column="0" Grid.Row="9" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-                                                                                                                     
+
             <ToggleButton x:Name="B1"  Grid.Column="1" Grid.Row="0" Width="auto" Height="{Binding Width, ElementName=A1}"/>
             <ToggleButton x:Name="B2"  Grid.Column="1" Grid.Row="1" Width="auto" Height="{Binding Width, ElementName=A1}"/>
             <ToggleButton x:Name="B3"  Grid.Column="1" Grid.Row="2" Width="auto" Height="{Binding Width, ElementName=A1}"/>
@@ -63,7 +63,7 @@
             <ToggleButton x:Name="B8"  Grid.Column="1" Grid.Row="7" Width="auto" Height="{Binding Width, ElementName=A1}"/>
             <ToggleButton x:Name="B9"  Grid.Column="1" Grid.Row="8" Width="auto" Height="{Binding Width, ElementName=A1}"/>
             <ToggleButton x:Name="B10" Grid.Column="1" Grid.Row="9" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-                                                                                                                     
+
             <ToggleButton x:Name="C1"  Grid.Column="2" Grid.Row="0" Width="auto" Height="{Binding Width, ElementName=A1}"/>
             <ToggleButton x:Name="C2"  Grid.Column="2" Grid.Row="1" Width="auto" Height="{Binding Width, ElementName=A1}"/>
             <ToggleButton x:Name="C3"  Grid.Column="2" Grid.Row="2" Width="auto" Height="{Binding Width, ElementName=A1}"/>
@@ -74,7 +74,7 @@
             <ToggleButton x:Name="C8"  Grid.Column="2" Grid.Row="7" Width="auto" Height="{Binding Width, ElementName=A1}"/>
             <ToggleButton x:Name="C9"  Grid.Column="2" Grid.Row="8" Width="auto" Height="{Binding Width, ElementName=A1}"/>
             <ToggleButton x:Name="C10" Grid.Column="2" Grid.Row="9" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-                                                                                                                     
+
             <ToggleButton x:Name="D1"  Grid.Column="3" Grid.Row="0" Width="auto" Height="{Binding Width, ElementName=A1}"/>
             <ToggleButton x:Name="D2"  Grid.Column="3" Grid.Row="1" Width="auto" Height="{Binding Width, ElementName=A1}"/>
             <ToggleButton x:Name="D3"  Grid.Column="3" Grid.Row="2" Width="auto" Height="{Binding Width, ElementName=A1}"/>
@@ -85,7 +85,7 @@
             <ToggleButton x:Name="D8"  Grid.Column="3" Grid.Row="7" Width="auto" Height="{Binding Width, ElementName=A1}"/>
             <ToggleButton x:Name="D9"  Grid.Column="3" Grid.Row="8" Width="auto" Height="{Binding Width, ElementName=A1}"/>
             <ToggleButton x:Name="D10" Grid.Column="3" Grid.Row="9" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-                                                                                                                     
+
             <ToggleButton x:Name="E1"  Grid.Column="4" Grid.Row="0" Width="auto" Height="{Binding Width, ElementName=A1}"/>
             <ToggleButton x:Name="E2"  Grid.Column="4" Grid.Row="1" Width="auto" Height="{Binding Width, ElementName=A1}"/>
             <ToggleButton x:Name="E3"  Grid.Column="4" Grid.Row="2" Width="auto" Height="{Binding Width, ElementName=A1}"/>
@@ -96,7 +96,7 @@
             <ToggleButton x:Name="E8"  Grid.Column="4" Grid.Row="7" Width="auto" Height="{Binding Width, ElementName=A1}"/>
             <ToggleButton x:Name="E9"  Grid.Column="4" Grid.Row="8" Width="auto" Height="{Binding Width, ElementName=A1}"/>
             <ToggleButton x:Name="E10" Grid.Column="4" Grid.Row="9" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-                                                                                                                     
+
             <ToggleButton x:Name="F1"  Grid.Column="5" Grid.Row="0" Width="auto" Height="{Binding Width, ElementName=A1}"/>
             <ToggleButton x:Name="F2"  Grid.Column="5" Grid.Row="1" Width="auto" Height="{Binding Width, ElementName=A1}"/>
             <ToggleButton x:Name="F3"  Grid.Column="5" Grid.Row="2" Width="auto" Height="{Binding Width, ElementName=A1}"/>
@@ -107,7 +107,7 @@
             <ToggleButton x:Name="F8"  Grid.Column="5" Grid.Row="7" Width="auto" Height="{Binding Width, ElementName=A1}"/>
             <ToggleButton x:Name="F9"  Grid.Column="5" Grid.Row="8" Width="auto" Height="{Binding Width, ElementName=A1}"/>
             <ToggleButton x:Name="F10" Grid.Column="5" Grid.Row="9" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-                                                                                                                     
+
             <ToggleButton x:Name="G1"  Grid.Column="6" Grid.Row="0" Width="auto" Height="{Binding Width, ElementName=A1}"/>
             <ToggleButton x:Name="G2"  Grid.Column="6" Grid.Row="1" Width="auto" Height="{Binding Width, ElementName=A1}"/>
             <ToggleButton x:Name="G3"  Grid.Column="6" Grid.Row="2" Width="auto" Height="{Binding Width, ElementName=A1}"/>
@@ -118,7 +118,7 @@
             <ToggleButton x:Name="G8"  Grid.Column="6" Grid.Row="7" Width="auto" Height="{Binding Width, ElementName=A1}"/>
             <ToggleButton x:Name="G9"  Grid.Column="6" Grid.Row="8" Width="auto" Height="{Binding Width, ElementName=A1}"/>
             <ToggleButton x:Name="G10" Grid.Column="6" Grid.Row="9" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-                                                                                                                     
+
             <ToggleButton x:Name="H1"  Grid.Column="7" Grid.Row="0" Width="auto" Height="{Binding Width, ElementName=A1}"/>
             <ToggleButton x:Name="H2"  Grid.Column="7" Grid.Row="1" Width="auto" Height="{Binding Width, ElementName=A1}"/>
             <ToggleButton x:Name="H3"  Grid.Column="7" Grid.Row="2" Width="auto" Height="{Binding Width, ElementName=A1}"/>
@@ -129,7 +129,7 @@
             <ToggleButton x:Name="H8"  Grid.Column="7" Grid.Row="7" Width="auto" Height="{Binding Width, ElementName=A1}"/>
             <ToggleButton x:Name="H9"  Grid.Column="7" Grid.Row="8" Width="auto" Height="{Binding Width, ElementName=A1}"/>
             <ToggleButton x:Name="H10" Grid.Column="7" Grid.Row="9" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-                                                                                                                     
+
             <ToggleButton x:Name="I1"  Grid.Column="8" Grid.Row="0" Width="auto" Height="{Binding Width, ElementName=A1}"/>
             <ToggleButton x:Name="I2"  Grid.Column="8" Grid.Row="1" Width="auto" Height="{Binding Width, ElementName=A1}"/>
             <ToggleButton x:Name="I3"  Grid.Column="8" Grid.Row="2" Width="auto" Height="{Binding Width, ElementName=A1}"/>
@@ -140,7 +140,7 @@
             <ToggleButton x:Name="I8"  Grid.Column="8" Grid.Row="7" Width="auto" Height="{Binding Width, ElementName=A1}"/>
             <ToggleButton x:Name="I9"  Grid.Column="8" Grid.Row="8" Width="auto" Height="{Binding Width, ElementName=A1}"/>
             <ToggleButton x:Name="I10" Grid.Column="8" Grid.Row="9" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-                                                                                                                    
+
             <ToggleButton x:Name="J1"  Grid.Column="9" Grid.Row="0" Width="auto" Height="{Binding Width, ElementName=A1}"/>
             <ToggleButton x:Name="J2"  Grid.Column="9" Grid.Row="1" Width="auto" Height="{Binding Width, ElementName=A1}"/>
             <ToggleButton x:Name="J3"  Grid.Column="9" Grid.Row="2" Width="auto" Height="{Binding Width, ElementName=A1}"/>
@@ -151,7 +151,7 @@
             <ToggleButton x:Name="J8"  Grid.Column="9" Grid.Row="7" Width="auto" Height="{Binding Width, ElementName=A1}"/>
             <ToggleButton x:Name="J9"  Grid.Column="9" Grid.Row="8" Width="auto" Height="{Binding Width, ElementName=A1}"/>
             <ToggleButton x:Name="J10" Grid.Column="9" Grid.Row="9" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-        </Grid>                                                                                                      
+        </Grid>
         <Grid Grid.Row="1" Grid.Column="0">
             <Grid.RowDefinitions>
                 <RowDefinition/>

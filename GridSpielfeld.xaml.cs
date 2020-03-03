@@ -24,5 +24,27 @@ namespace Schiffeversenken
         {
             InitializeComponent();
         }
+
+        private void UsercontrolSizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            double size = Math.Min(e.NewSize.Height, e.NewSize.Width);
+            mainGrid.Width = size;
+            mainGrid.Height = size;
+        }
+
+        public void updateGUI(Spielfeld Spielfeld)
+        {
+            String[] alphabet = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J" };
+            for(int reihe = 0; reihe<10; reihe++)
+            {
+                string reihenBuchstabe = alphabet[reihe];
+                for(int spalte = 0; spalte <10; spalte++)
+                {
+                    string TileName = reihenBuchstabe + spalte;
+                    
+                }
+            }
+            spielbaresSpielfeld.c
+        }
     }
 }

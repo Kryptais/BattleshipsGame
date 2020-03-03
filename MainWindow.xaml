@@ -30,15 +30,15 @@
         <TabItem x:Name="PlaceShips" Visibility="Collapsed">
             <Grid x:Name="test">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="30"/>
-                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="50"/>
                     <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="50"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="50"/>
                     <RowDefinition Height="*"/>
-                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="50"/>
                 </Grid.RowDefinitions>
                 <Label Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" HorizontalContentAlignment="Center" FontSize="25" Content="Place Ships"/>
                 <Grid Grid.Row="1" Grid.Column="1" >
@@ -61,7 +61,7 @@
                     <Button Grid.Column="1" Grid.Row="4" Content="Random Placement" FontSize="20" Margin="10" Click="Place_Ships_Random"/>
                     <Button x:Name="FinishPlacement" Grid.Column="1" Grid.Row="5" Content="Finish" Margin="10" FontSize="20" Click="Start_Game" IsEnabled="False"/>
                 </Grid>
-                
+                <local:GridSpielfeld x:Name="TestPLayerSpielfeld" Grid.Row="1" Grid.Column="2"  />
             </Grid>
         </TabItem>
         <TabItem x:Name="Playfield" Visibility="Collapsed">
