@@ -22,16 +22,15 @@ namespace Schiffeversenken
         public Random random;
         public int[,] intArrayField { get; set; }
         public PlayField playfield = new PlayField();
-        public List<Ship> shipList = new List<Ship>();
-
-        public GameField(int fieldlenght, Random random)
+        public List<Schiff> shipList = new List<Schiff>();
+        public GameField(int fieldlenght, Random random, string playerName)
         {
             this.fieldlenght = fieldlenght;
             intArrayField = new int[fieldlenght, fieldlenght];
             this.random = random;
             for (int i = 0; i<5; i++)
             {
-                Ship ship = new Ship(i+1);
+                Schiff ship = new Schiff(i+1, playerName);
                 shipList.Add(ship);
             }
         }
@@ -52,6 +51,7 @@ namespace Schiffeversenken
                     value = 1;
                     break;
             }
+   
             playfield.PlayGrid.Children.Remove(button);
             // Player2.PlayGrid.Children.Remove(button);
             Rectangle rectangle = new Rectangle();
@@ -71,6 +71,11 @@ namespace Schiffeversenken
 
             var myWin = (MainWindow)Application.Current.MainWindow;
             myWin.playerVsComputer.PlayerSHots();
+            foreach (Schiff s in myWin.playerVsComputer.AI.shipList)
+            {
+                s.updateshipcoord(y, x);
+
+            }
 
         }
 
@@ -312,7 +317,7 @@ namespace Schiffeversenken
                 placeShipRandom(shipList[i]);
             }
         }
-        private bool placeShipRandom(Ship ship)
+        private bool placeShipRandom(Schiff ship)
         {
             bool result = false;
             int resultingDirection = 4;
@@ -358,16 +363,16 @@ namespace Schiffeversenken
             switch (resultingDirection)
             {
                 case 0:
-                    placeShipInDirNorth(shipStern, ship.shiplenght);
+                    placeShipInDirNorth(shipStern, ship.shiplenght, ship);
                     break;
                 case 1:
-                    placeShipInDirEast(shipStern, ship.shiplenght);
+                    placeShipInDirEast(shipStern, ship.shiplenght, ship);
                     break;
                 case 2:
-                    placeShipInDirSouth(shipStern, ship.shiplenght);
+                    placeShipInDirSouth(shipStern, ship.shiplenght, ship);
                     break;
                 case 3:
-                    placeShipInDirWest(shipStern, ship.shiplenght);
+                    placeShipInDirWest(shipStern, ship.shiplenght, ship);
                     break;
                 case 4:
                     MessageBox.Show("Fehler beim platzieren der Schiffe");
@@ -377,32 +382,37 @@ namespace Schiffeversenken
 
             return result;
         }
-        private void placeShipInDirNorth(int[,] shipStern, int shiplenght)
+        private void placeShipInDirNorth(int[,] shipStern, int shiplenght, Schiff ship)
         {
             for (int i = 0; i < shiplenght; i++)
             {
                 intArrayField[shipStern[0, 0] - i, shipStern[0, 1]] = 1;
+                ship.addshipcoord(shipStern[0, 0] - i, shipStern[0, 1]);
             }
         }
-        private void placeShipInDirEast(int[,] shipStern, int shiplenght)
+        private void placeShipInDirEast(int[,] shipStern, int shiplenght, Schiff ship)
         {
             for (int i = 0; i < shiplenght; i++)
             {
                 intArrayField[shipStern[0, 0], shipStern[0, 1] + i] = 1;
+                ship.addshipcoord(shipStern[0, 0], shipStern[0, 1] + i);
             }
+
         }
-        private void placeShipInDirSouth(int[,] shipStern, int shiplenght)
+        private void placeShipInDirSouth(int[,] shipStern, int shiplenght, Schiff ship)
         {
             for (int i = 0; i < shiplenght; i++)
             {
                 intArrayField[shipStern[0, 0] + i, shipStern[0, 1]] = 1;
+                ship.addshipcoord(shipStern[0, 0] + i, shipStern[0, 1]);
             }
         }
-        private void placeShipInDirWest(int[,] shipStern, int shiplenght)
+        private void placeShipInDirWest(int[,] shipStern, int shiplenght, Schiff ship)
         {
             for (int i = 0; i < shiplenght; i++)
             {
                 intArrayField[shipStern[0, 0], shipStern[0, 1] - i] = 1;
+                ship.addshipcoord(shipStern[0, 0], shipStern[0, 1] - i);
             }
         }
         private bool checkNDirection(int[,] shipStern, int shiplenght)

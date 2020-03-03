@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Schiffeversenken
 {
     /// <summary>
-    /// Interaktionslogik für CustomButton.xaml
+    /// Interaktionslogik für GridSpielfeld.xaml
     /// </summary>
-    public partial class CustomButton : UserControl
+    public partial class GridSpielfeld : UserControl
     {
-        public CustomButton()
+        public GridSpielfeld()
         {
             InitializeComponent();
         }

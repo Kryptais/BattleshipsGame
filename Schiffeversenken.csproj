@@ -55,13 +55,27 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="CustomButton.xaml.cs">
-      <DependentUpon>CustomButton.xaml</DependentUpon>
+    <Compile Include="Enum.cs" />
+    <Compile Include="EnumErweiterung.cs" />
+    <Compile Include="alt\GameAI.cs" />
+    <Compile Include="GridSpielfeld.xaml.cs">
+      <DependentUpon>GridSpielfeld.xaml</DependentUpon>
     </Compile>
-    <Compile Include="GameAI.cs" />
-    <Compile Include="PlayerVsComputer.cs" />
-    <Compile Include="Ship.cs" />
-    <Page Include="CustomButton.xaml">
+    <Compile Include="Schiffe\AircraftCarrier.cs" />
+    <Compile Include="Schiffe\Battleship.cs" />
+    <Compile Include="Schiffe\Cruiser.cs" />
+    <Compile Include="Schiffe\Destroyer.cs" />
+    <Compile Include="Schiffe\Schiffe.cs" />
+    <Compile Include="Schiffe\Submarine.cs" />
+    <Compile Include="Spieler.cs" />
+    <Compile Include="SpielfeldKomponenten\Koordinaten.cs" />
+    <Compile Include="alt\PlayerVsComputer.cs" />
+    <Compile Include="SpielfeldKomponenten\schussSpielfeld.cs" />
+    <Compile Include="SpielfeldKomponenten\SpielfeldTile.cs" />
+    <Compile Include="alt\Schiff.cs" />
+    <Compile Include="SpielfeldTileErweiterung.cs" />
+    <Compile Include="SpielfeldKomponenten\Spielfeld.cs" />
+    <Page Include="GridSpielfeld.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -77,16 +91,9 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="PlayField.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GameField.cs" />
-    <Compile Include="PlayField.xaml.cs">
-      <DependentUpon>PlayField.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="alt\GameField.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -112,5 +119,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,0 +1,76 @@
+﻿<UserControl x:Class="Schiffeversenken.PlayField"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Schiffeversenken"
+             mc:Ignorable="d" 
+             Name="UCName"
+             Width="{Binding ActualHeight, ElementName= UCName}" Height="auto">
+  <Grid>
+    <Grid.ColumnDefinition>
+      <ColumnDefinition/>
+      <ColumnDefinition/>
+    </Grid.ColumnDefinition>
+    <Grid.RowDefinition>
+      <RowDefinition/>
+      <RowDefinition/>
+    </Grid.RowDefinition>
+    <Grid Name="PlayGrid" Margin="0" Grid.row ="1" Grid.Column="1" >
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition/>
+        <ColumnDefinition/>
+        <ColumnDefinition/>
+        <ColumnDefinition/>
+        <ColumnDefinition/>
+        <ColumnDefinition/>
+        <ColumnDefinition/>
+        <ColumnDefinition/>
+        <ColumnDefinition/>
+        <ColumnDefinition/>
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+        <RowDefinition/>
+        <RowDefinition/>
+        <RowDefinition/>
+        <RowDefinition/>
+        <RowDefinition/>
+        <RowDefinition/>
+        <RowDefinition/>
+        <RowDefinition/>
+        <RowDefinition/>
+        <RowDefinition/>
+      </Grid.RowDefinitions>
+    </Grid>
+    <Grid Grid.Row="1" Grid.Column="0">
+      <Grid.RowDefinition>
+        <RowDefinition/>
+        <RowDefinition/>
+        <RowDefinition/>
+        <RowDefinition/>
+        <RowDefinition/>
+        <RowDefinition/>
+        <RowDefinition/>
+        <RowDefinition/>
+        <RowDefinition/>
+        <RowDefinition/>
+      </Grid.RowDefinition>
+      <Label Content ="A" Grid.Row="0"/>
+    </Grid>
+    <Grid Grid.row="0" Grid.Column ="1">
+      <Grid.ColumnDefinition>
+        <ColumnDefinition/>
+        <ColumnDefinition/>
+        <ColumnDefinition/>
+        <ColumnDefinition/>
+        <ColumnDefinition/>
+        <ColumnDefinition/>
+        <ColumnDefinition/>
+        <ColumnDefinition/>
+        <ColumnDefinition/>
+        <ColumnDefinition/>
+      </Grid.ColumnDefinition>
+    </Grid>
+  </Grid>
+    
+</UserControl>

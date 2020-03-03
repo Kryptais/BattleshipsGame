@@ -16,8 +16,8 @@ namespace Schiffeversenken
         public int shotsFiredAI = 0;
         public  int shotsFiredPlayer = 0;
         Random random;
-        GameField AI;
-        GameField Player;
+        public GameField AI;
+        public GameField Player;
         public delegate void MyEventHandler();
         public event MyEventHandler PLayerhasShot;
    
@@ -46,9 +46,20 @@ namespace Schiffeversenken
             AI.drawGameFieldNoButtons();
             shotsFiredPlayer++;
             PLayerhasShot();
+            //foreach (Ship s in Player.shipList)
+            //{
+            //    for (int i = 0; i < s.shiplenght; i++)
+            //    {
+            //        if (s.shipcoords[i, 0] == y && s.shipcoords[i, 1] == x)
+            //        {
+            //            s.updateshipcoord(y, x, 1);
+            //        }
+            //    }
+
+            //}
 
         }
-        public  void AIShots()
+        public  int[,] AIShots()
         {
             // 0 = water
             //1 = ship
@@ -57,20 +68,33 @@ namespace Schiffeversenken
             int x = 0;
             int y = 0;
             bool result = false;
-            while(result == false)
+            while (result == false)
             {
                 string coord = randomcoordinate();
                 char[] test = coord.ToCharArray();
                 y = int.Parse(test[0].ToString());
                 x = int.Parse(test[1].ToString());
-                if(int.Parse(coord) < 10)
+                if (int.Parse(coord) < 10)
                 {
                     coord = int.Parse(coord).ToString();
+
                 }
-                    shots.Remove(coord);
-                    result = true;
+                shots.Remove(coord);
+                result = true;
+                //foreach (Ship s in Player.shipList)
+                //{
+                //    for (int i = 0; i < s.shiplenght; i++)
+                //    {
+                //        if (s.shipcoords[i, 0] == y && s.shipcoords[i, 1] == x)
+                //        {
+                //            s.updateshipcoord(y, x);
+                //        }
+                //    }
+
+                //}
+
             }
-                if (Player.intArrayField[y, x] == 0)
+            if (Player.intArrayField[y, x] == 0)
                 {
                     Player.intArrayField[y, x] = 2;
                 }
@@ -83,6 +107,11 @@ namespace Schiffeversenken
                 shotsFiredAI++;
             AI.playfield.PlayGrid.Children.Clear();
             AI.drawEnemyGameField();
+            int[,] shotcoords = new int[1, 2];
+            shotcoords[0, 0] = y;
+            shotcoords[0, 1] = x;
+            return shotcoords;
+
         }
         public string randomcoordinate()
         {

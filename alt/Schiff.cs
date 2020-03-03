@@ -3,33 +3,33 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Schiffeversenken
 {
-   public class Ship
+   public class Schiff
     {
         public int shiplenght;
         public string name;
-        int[,] shipcoords;
+        public int[,] shipcoords;
         int counter = 0;
-        int yarraycolumn = 0;
-        int xarraycolumn = 1;
-        int shipPartConditionArrayColumn = 2;
-        bool shipISAlive = true;
+        int hitCounter = 0;
+        bool alreadynotifyed = false;
+        string playerName = "test";
 
-        public Ship(int shiplenght)
+        public Schiff(int shiplenght, string playername)
         {
             this.shiplenght = shiplenght;
             set_Name();
             shipcoords = new int[shiplenght, 3];
-
+            this.playerName = playername;
         }
         public void set_Name()
         {
             switch (shiplenght)
             {
                 case 1:
-                    this.name = "submarine";
+                    this.name = "Submarine";
                     break;
                 case 2:
                     this.name = "Destroyer";
@@ -47,38 +47,36 @@ namespace Schiffeversenken
         }
         public void addshipcoord(int y, int x)
         {
-            shipcoords[counter, yarraycolumn] = y;
-            shipcoords[counter, xarraycolumn] = x;
+            shipcoords[counter, 0] = y;
+            shipcoords[counter, 1] = x;
             counter++;
         }
-        public void updateshipcoord(int y , int x, int condition)
+        public void updateshipcoord(int x, int y)
         {
-            int index;
-            for(int i = 0; i < shiplenght; i++)
+            for (int i = 0; i < shiplenght; i++)
             {
-                    if(shipcoords[i,0].Equals(y) && shipcoords[i, 1].Equals(x))
-                    {
-                    index = i;
-                    shipcoords[index, shipPartConditionArrayColumn] = condition;
-                    }
-            }
-            checkShipstatus();
-    
-        }
-        private void checkShipstatus()
-        {
-            int counterHitParts = 0;
-            for(int i = 0; i< shiplenght; i++)
-            {
-                if (shipcoords[i, 2].Equals(1))
+                if (shipcoords[i, 0] == y && shipcoords[i, 1] == x)
                 {
-                    counterHitParts++;
+                    shipcoords[i, 2] = 1;
+                    hitCounter++;
                 }
             }
-            if(counterHitParts == shiplenght)
+
+            if (hitCounter == shiplenght)
             {
-                shipISAlive = false;
+                notifyGUI();
             }
+
+        }
+        private void notifyGUI()
+        {
+            if(alreadynotifyed == false)
+            {
+                var myWin = (MainWindow)Application.Current.MainWindow;
+                myWin.EventBox.Text += name + " von " + playerName + " wurde versenkt. \n";
+                alreadynotifyed = true;
+            }
+
         }
     }
 }
