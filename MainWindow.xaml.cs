@@ -23,6 +23,7 @@ namespace Schiffeversenken
     public partial class MainWindow : Window
     {
         public Random random = new Random();
+        Spiel spiel;
         //GameField PlayerPlacement;
         //GameField Player;
         //GameField AI;
@@ -52,6 +53,7 @@ namespace Schiffeversenken
         private void PlacingPhase_Clicked(object sender, RoutedEventArgs e)
         {
             tabcontrol.SelectedItem = PlaceShips;
+            spiel = new Spiel();
         }
 
         private void Settings_Clicked(object sender, RoutedEventArgs e)
@@ -67,7 +69,8 @@ namespace Schiffeversenken
         private void Start_Game(object sender, RoutedEventArgs e)
         {
             tabcontrol.SelectedItem = Playfield;
-
+            spiel.Spieler1.ZeichneSpielfeld(SchiffFeld);
+            spiel.Spieler2.ZeichneSpielfeld(Schussfeld);
             //AI = new GameField(10, random, "Computer");
             //AI.generateRandomPlayfield();
             //AI.drawEnemyGameField();
@@ -101,6 +104,9 @@ namespace Schiffeversenken
         //}
         private void Place_Ships_Random(object sender, RoutedEventArgs e)
         {
+            spiel.Spieler1.bereinigeSpielfeld();
+            spiel.Spieler1.platziereSchiffe();
+            spiel.Spieler1.ZeichneSpielfeld(TestPLayerSpielfeld);
             //(PlaceShips.Content as Grid).Children.Clear();
             //PlayerPlacement = new GameField(10, random, "Player");
             //PlayerPlacement.generateRandomPlayfield();
@@ -110,7 +116,7 @@ namespace Schiffeversenken
             //Grid.SetRow(PlayerPlacement.playfield, 1);
 
 
-            //FinishPlacement.IsEnabled = true;
+            FinishPlacement.IsEnabled = true;
         }
 
     }

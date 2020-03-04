@@ -37,7 +37,13 @@ namespace Schiffeversenken
         {
             gridSpielfeld.updateGUI(Spielfeld);
         }
-
+        public void bereinigeSpielfeld()
+        {
+            foreach(SpielfeldTile st in Spielfeld.SpielfeldTiles)
+            {
+                st.Teilbelegung = Teilbelegung.Leer;
+            }
+        }
         public void platziereSchiffe()
         {
             //Random class creation stolen from http://stackoverflow.com/a/18267477/106356

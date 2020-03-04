@@ -17,7 +17,7 @@ namespace Schiffeversenken
             Spieler2 = new Spieler("AI");
 
             Spieler2.platziereSchiffe();
-
+            //Spieler2.ZeichneSpielfeld();
 
         }
     }

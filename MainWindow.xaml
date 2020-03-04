@@ -89,6 +89,8 @@
                 </Border>
                 <Label Content="Your Turn" Grid.Row="2" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" />
                 <Label Content="Opponents Turn" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                <local:GridSpielfeld x:Name="Schussfeld" Grid.Row="3" Grid.Column="1"  />
+                <local:GridSpielfeld x:Name="SchiffFeld" Grid.Row="3" Grid.Column="3"  />
             </Grid>
         </TabItem>
         <TabItem x:Name="Settings" Visibility="Collapsed">
