@@ -12,6 +12,7 @@ namespace Schiffeversenken
         public Spielfeld Spielfeld { get; set; }
         public schussSpielfeld schussSpielfeld { get; set; }
         public List<Schiffe.Schiffe> Schiffe { get; set; }
+        MainWindow Main;
         public bool hatVerloren
         {
             get
@@ -19,8 +20,9 @@ namespace Schiffeversenken
                 return Schiffe.All(x => x.istGesunken);
             }
         }
-        public Spieler(string name)
+        public Spieler(string name, MainWindow main)
         {
+            Main = main;
             Name = name;
             Schiffe = new List<Schiffe.Schiffe>()
             {
@@ -36,6 +38,10 @@ namespace Schiffeversenken
         public void ZeichneSpielfeld(GridSpielfeld gridSpielfeld)
         {
             gridSpielfeld.updateGUI(Spielfeld);
+        }
+        public void ZeichneSpielfeldNoButton(GridSpielfeldNoButton gridSpielfeldNoButton)
+        {
+            gridSpielfeldNoButton.updateGUI(Spielfeld); 
         }
         public void bereinigeSpielfeld()
         {
@@ -53,10 +59,10 @@ namespace Schiffeversenken
                 bool isOpen = true;
                 while (isOpen)
                 {
-                    var startSpalte = rand.Next(1,11);
-                    var startReihe = rand.Next(1, 11);
+                    var startSpalte = rand.Next(0,9);
+                    var startReihe = rand.Next(0, 9);
                     int endReihe = startReihe, endSpalte = startSpalte;
-                    var orientation = rand.Next(1, 101) % 2; //0 für Horizontal
+                    var orientation = rand.Next(0, 100) % 2; //0 für Horizontal
 
                     List<int> schiffsteilNummern = new List<int>();
                     if (orientation == 0)
@@ -75,7 +81,7 @@ namespace Schiffeversenken
                     }
 
                     //Schiffe können nicht über das Spielfeld hinaus
-                    if(endReihe > 10 || endSpalte > 10)
+                    if(endReihe > 9 || endSpalte > 9)
                     {
                         isOpen = true;
                         continue;
@@ -99,7 +105,7 @@ namespace Schiffeversenken
         }
          public Koordinaten FireShot()
         {
-            // Wenn auf dem Spielfeld fleder sind die getroffen sind und Nachbarn keine schüsse haben, sollten wir zuerst dadrauf schiessen.
+            // Wenn auf dem Spielfeld felder sind die getroffen sind und Nachbarn keine schüsse haben, sollten wir zuerst dadrauf schiessen.
             var getroffeneNachbarn = schussSpielfeld.GetGetroffeneNachbarn();
             Koordinaten koords;
             if(getroffeneNachbarn.Any())
@@ -134,17 +140,21 @@ namespace Schiffeversenken
 
         public SchussErgebnis VerarbeiteSchuss(Koordinaten koords)
         {
-            var Tile = Spielfeld.SpielfeldTiles.At(koords.Reihe, koords.Spalte);
-            if(!Tile.istBesetzt)
+            int index = koords.Reihe + koords.Spalte;
+            SpielfeldTile Tile = Spielfeld.SpielfeldTiles[index];//.At(koords.Reihe, koords.Spalte);
+            if(Tile.istBesetzt == false)
             {
+                Main.EventBox.Text += Environment.NewLine + Name + " says: \"Miss!\"";
                // Console.WriteLine(Name + " says: \"Miss!\"");
                 return SchussErgebnis.Miss;
             }
             var schiff = Schiffe.First(x => x.Teilbelegung == Tile.Teilbelegung);
             schiff.Treffer++;
+            Main.EventBox.Text += Environment.NewLine + Name + " says: \"Treffer!\"";
             //Console.WriteLine(Name + " says: \"Hit!\"");
             if (schiff.istGesunken)
             {
+                Main.EventBox.Text += Environment.NewLine + Name + " says: \" Du hast mein " + schiff.Name + "versenkt!";
                 //Console.WriteLine(Name + " says: \"You sunk my " + ship.Name + "!\"");
             }
             return SchussErgebnis.Hit;
@@ -152,7 +162,8 @@ namespace Schiffeversenken
 
         public void VerarbeiteSchussErgebniss(Koordinaten koords, SchussErgebnis result)
         {
-            var Tile = schussSpielfeld.SpielfeldTiles.At(koords.Reihe, koords.Spalte);
+            int index = koords.Reihe + koords.Spalte;
+            var Tile = schussSpielfeld.SpielfeldTiles[index];//.At(koords.Reihe, koords.Spalte);
             switch (result)
             {
                 case SchussErgebnis.Hit:

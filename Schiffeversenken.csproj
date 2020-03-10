@@ -56,10 +56,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Enum.cs" />
-    <Compile Include="EnumErweiterung.cs" />
+    <Compile Include="EnumExtensions.cs" />
     <Compile Include="alt\GameAI.cs" />
-    <Compile Include="GridSpielfeld - Kopieren.xaml.cs">
-      <DependentUpon>GridSpielfeld - Kopieren.xaml</DependentUpon>
+    <Compile Include="GridSpielfeldNoButton.xaml.cs">
+      <DependentUpon>GridSpielfeldNoButton.xaml</DependentUpon>
     </Compile>
     <Compile Include="GridSpielfeld.xaml.cs">
       <DependentUpon>GridSpielfeld.xaml</DependentUpon>
@@ -79,7 +79,7 @@
     <Compile Include="alt\Schiff.cs" />
     <Compile Include="SpielfeldTileErweiterung.cs" />
     <Compile Include="SpielfeldKomponenten\Spielfeld.cs" />
-    <Page Include="GridSpielfeld - Kopieren.xaml">
+    <Page Include="GridSpielfeldNoButton.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

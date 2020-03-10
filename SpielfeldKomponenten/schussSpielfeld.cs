@@ -28,15 +28,15 @@ namespace Schiffeversenken
             int reihe = koordinaten.Reihe;
             int spalte = koordinaten.Spalte;
             List<SpielfeldTile> spielfeldTiles = new List<SpielfeldTile>();
-            if(spalte > 1)
+            if(spalte > 0)
             {
                 spielfeldTiles.Add(SpielfeldTiles.At(reihe, spalte - 1));
             }
-            if(reihe > 1)
+            if(reihe > 0)
             {
                 spielfeldTiles.Add(SpielfeldTiles.At(reihe - 1, spalte));
             }
-            if(reihe < 10)
+            if(reihe < 9)
             {
                 spielfeldTiles.Add(SpielfeldTiles.At(reihe, spalte + 1));
             }

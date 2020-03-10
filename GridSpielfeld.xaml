@@ -42,115 +42,115 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <ToggleButton x:Name="A1"  Grid.Column="0" Grid.Row="0" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="A2"  Grid.Column="0" Grid.Row="1" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="A3"  Grid.Column="0" Grid.Row="2" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="A4"  Grid.Column="0" Grid.Row="3" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="A5"  Grid.Column="0" Grid.Row="4" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="A6"  Grid.Column="0" Grid.Row="5" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="A7"  Grid.Column="0" Grid.Row="6" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="A8"  Grid.Column="0" Grid.Row="7" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="A9"  Grid.Column="0" Grid.Row="8" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="A10" Grid.Column="0" Grid.Row="9" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-
-            <ToggleButton x:Name="B1"  Grid.Column="1" Grid.Row="0" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="B2"  Grid.Column="1" Grid.Row="1" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="B3"  Grid.Column="1" Grid.Row="2" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="B4"  Grid.Column="1" Grid.Row="3" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="B5"  Grid.Column="1" Grid.Row="4" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="B6"  Grid.Column="1" Grid.Row="5" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="B7"  Grid.Column="1" Grid.Row="6" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="B8"  Grid.Column="1" Grid.Row="7" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="B9"  Grid.Column="1" Grid.Row="8" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="B10" Grid.Column="1" Grid.Row="9" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-
-            <ToggleButton x:Name="C1"  Grid.Column="2" Grid.Row="0" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="C2"  Grid.Column="2" Grid.Row="1" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="C3"  Grid.Column="2" Grid.Row="2" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="C4"  Grid.Column="2" Grid.Row="3" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="C5"  Grid.Column="2" Grid.Row="4" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="C6"  Grid.Column="2" Grid.Row="5" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="C7"  Grid.Column="2" Grid.Row="6" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="C8"  Grid.Column="2" Grid.Row="7" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="C9"  Grid.Column="2" Grid.Row="8" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="C10" Grid.Column="2" Grid.Row="9" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-
-            <ToggleButton x:Name="D1"  Grid.Column="3" Grid.Row="0" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="D2"  Grid.Column="3" Grid.Row="1" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="D3"  Grid.Column="3" Grid.Row="2" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="D4"  Grid.Column="3" Grid.Row="3" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="D5"  Grid.Column="3" Grid.Row="4" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="D6"  Grid.Column="3" Grid.Row="5" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="D7"  Grid.Column="3" Grid.Row="6" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="D8"  Grid.Column="3" Grid.Row="7" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="D9"  Grid.Column="3" Grid.Row="8" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="D10" Grid.Column="3" Grid.Row="9" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-
-            <ToggleButton x:Name="E1"  Grid.Column="4" Grid.Row="0" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="E2"  Grid.Column="4" Grid.Row="1" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="E3"  Grid.Column="4" Grid.Row="2" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="E4"  Grid.Column="4" Grid.Row="3" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="E5"  Grid.Column="4" Grid.Row="4" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="E6"  Grid.Column="4" Grid.Row="5" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="E7"  Grid.Column="4" Grid.Row="6" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="E8"  Grid.Column="4" Grid.Row="7" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="E9"  Grid.Column="4" Grid.Row="8" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="E10" Grid.Column="4" Grid.Row="9" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-
-            <ToggleButton x:Name="F1"  Grid.Column="5" Grid.Row="0" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="F2"  Grid.Column="5" Grid.Row="1" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="F3"  Grid.Column="5" Grid.Row="2" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="F4"  Grid.Column="5" Grid.Row="3" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="F5"  Grid.Column="5" Grid.Row="4" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="F6"  Grid.Column="5" Grid.Row="5" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="F7"  Grid.Column="5" Grid.Row="6" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="F8"  Grid.Column="5" Grid.Row="7" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="F9"  Grid.Column="5" Grid.Row="8" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="F10" Grid.Column="5" Grid.Row="9" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-
-            <ToggleButton x:Name="G1"  Grid.Column="6" Grid.Row="0" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="G2"  Grid.Column="6" Grid.Row="1" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="G3"  Grid.Column="6" Grid.Row="2" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="G4"  Grid.Column="6" Grid.Row="3" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="G5"  Grid.Column="6" Grid.Row="4" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="G6"  Grid.Column="6" Grid.Row="5" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="G7"  Grid.Column="6" Grid.Row="6" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="G8"  Grid.Column="6" Grid.Row="7" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="G9"  Grid.Column="6" Grid.Row="8" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="G10" Grid.Column="6" Grid.Row="9" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-
-            <ToggleButton x:Name="H1"  Grid.Column="7" Grid.Row="0" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="H2"  Grid.Column="7" Grid.Row="1" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="H3"  Grid.Column="7" Grid.Row="2" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="H4"  Grid.Column="7" Grid.Row="3" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="H5"  Grid.Column="7" Grid.Row="4" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="H6"  Grid.Column="7" Grid.Row="5" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="H7"  Grid.Column="7" Grid.Row="6" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="H8"  Grid.Column="7" Grid.Row="7" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="H9"  Grid.Column="7" Grid.Row="8" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="H10" Grid.Column="7" Grid.Row="9" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-
-            <ToggleButton x:Name="I1"  Grid.Column="8" Grid.Row="0" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="I2"  Grid.Column="8" Grid.Row="1" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="I3"  Grid.Column="8" Grid.Row="2" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="I4"  Grid.Column="8" Grid.Row="3" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="I5"  Grid.Column="8" Grid.Row="4" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="I6"  Grid.Column="8" Grid.Row="5" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="I7"  Grid.Column="8" Grid.Row="6" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="I8"  Grid.Column="8" Grid.Row="7" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="I9"  Grid.Column="8" Grid.Row="8" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="I10" Grid.Column="8" Grid.Row="9" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-
-            <ToggleButton x:Name="J1"  Grid.Column="9" Grid.Row="0" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="J2"  Grid.Column="9" Grid.Row="1" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="J3"  Grid.Column="9" Grid.Row="2" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="J4"  Grid.Column="9" Grid.Row="3" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="J5"  Grid.Column="9" Grid.Row="4" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="J6"  Grid.Column="9" Grid.Row="5" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="J7"  Grid.Column="9" Grid.Row="6" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="J8"  Grid.Column="9" Grid.Row="7" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="J9"  Grid.Column="9" Grid.Row="8" Width="auto" Height="{Binding Width, ElementName=A1}"/>
-            <ToggleButton x:Name="J10" Grid.Column="9" Grid.Row="9" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="A1"  Margin="1" Grid.Column="0" Background="Blue" Grid.Row="0" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="A2"  Margin="1" Grid.Column="0" Background="Blue" Grid.Row="1" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="A3"  Margin="1" Grid.Column="0" Background="Blue" Grid.Row="2" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="A4"  Margin="1" Grid.Column="0" Background="Blue" Grid.Row="3" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="A5"  Margin="1" Grid.Column="0" Background="Blue" Grid.Row="4" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="A6"  Margin="1" Grid.Column="0" Background="Blue" Grid.Row="5" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="A7"  Margin="1" Grid.Column="0" Background="Blue" Grid.Row="6" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="A8"  Margin="1" Grid.Column="0" Background="Blue" Grid.Row="7" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="A9"  Margin="1" Grid.Column="0" Background="Blue" Grid.Row="8" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="A10" Margin="1" Grid.Column="0" Background="Blue" Grid.Row="9" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+                                            
+            <Canvas x:Name="B1"  Margin="1" Grid.Column="1" Background="Blue" Grid.Row="0" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="B2"  Margin="1" Grid.Column="1" Background="Blue" Grid.Row="1" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="B3"  Margin="1" Grid.Column="1" Background="Blue" Grid.Row="2" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="B4"  Margin="1" Grid.Column="1" Background="Blue" Grid.Row="3" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="B5"  Margin="1" Grid.Column="1" Background="Blue" Grid.Row="4" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="B6"  Margin="1" Grid.Column="1" Background="Blue" Grid.Row="5" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="B7"  Margin="1" Grid.Column="1" Background="Blue" Grid.Row="6" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="B8"  Margin="1" Grid.Column="1" Background="Blue" Grid.Row="7" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="B9"  Margin="1" Grid.Column="1" Background="Blue" Grid.Row="8" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="B10" Margin="1" Grid.Column="1" Background="Blue" Grid.Row="9" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+                                          
+            <Canvas x:Name="C1"  Margin="1" Grid.Column="2" Background="Blue" Grid.Row="0" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="C2"  Margin="1" Grid.Column="2" Background="Blue" Grid.Row="1" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="C3"  Margin="1" Grid.Column="2" Background="Blue" Grid.Row="2" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="C4"  Margin="1" Grid.Column="2" Background="Blue" Grid.Row="3" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="C5"  Margin="1" Grid.Column="2" Background="Blue" Grid.Row="4" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="C6"  Margin="1" Grid.Column="2" Background="Blue" Grid.Row="5" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="C7"  Margin="1" Grid.Column="2" Background="Blue" Grid.Row="6" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="C8"  Margin="1" Grid.Column="2" Background="Blue" Grid.Row="7" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="C9"  Margin="1" Grid.Column="2" Background="Blue" Grid.Row="8" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="C10" Margin="1" Grid.Column="2" Background="Blue" Grid.Row="9" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+                                         
+            <Canvas x:Name="D1"  Margin="1" Grid.Column="3" Background="Blue" Grid.Row="0" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="D2"  Margin="1" Grid.Column="3" Background="Blue" Grid.Row="1" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="D3"  Margin="1" Grid.Column="3" Background="Blue" Grid.Row="2" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="D4"  Margin="1" Grid.Column="3" Background="Blue" Grid.Row="3" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="D5"  Margin="1" Grid.Column="3" Background="Blue" Grid.Row="4" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="D6"  Margin="1" Grid.Column="3" Background="Blue" Grid.Row="5" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="D7"  Margin="1" Grid.Column="3" Background="Blue" Grid.Row="6" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="D8"  Margin="1" Grid.Column="3" Background="Blue" Grid.Row="7" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="D9"  Margin="1" Grid.Column="3" Background="Blue" Grid.Row="8" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="D10" Margin="1" Grid.Column="3" Background="Blue" Grid.Row="9" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+                                            
+            <Canvas x:Name="E1"  Margin="1" Grid.Column="4" Background="Blue" Grid.Row="0" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="E2"  Margin="1" Grid.Column="4" Background="Blue" Grid.Row="1" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="E3"  Margin="1" Grid.Column="4" Background="Blue" Grid.Row="2" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="E4"  Margin="1" Grid.Column="4" Background="Blue" Grid.Row="3" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="E5"  Margin="1" Grid.Column="4" Background="Blue" Grid.Row="4" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="E6"  Margin="1" Grid.Column="4" Background="Blue" Grid.Row="5" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="E7"  Margin="1" Grid.Column="4" Background="Blue" Grid.Row="6" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="E8"  Margin="1" Grid.Column="4" Background="Blue" Grid.Row="7" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="E9"  Margin="1" Grid.Column="4" Background="Blue" Grid.Row="8" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="E10" Margin="1" Grid.Column="4" Background="Blue" Grid.Row="9" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+                                         
+            <Canvas x:Name="F1"  Margin="1" Grid.Column="5" Background="Blue" Grid.Row="0" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="F2"  Margin="1" Grid.Column="5" Background="Blue" Grid.Row="1" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="F3"  Margin="1" Grid.Column="5" Background="Blue" Grid.Row="2" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="F4"  Margin="1" Grid.Column="5" Background="Blue" Grid.Row="3" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="F5"  Margin="1" Grid.Column="5" Background="Blue" Grid.Row="4" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="F6"  Margin="1" Grid.Column="5" Background="Blue" Grid.Row="5" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="F7"  Margin="1" Grid.Column="5" Background="Blue" Grid.Row="6" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="F8"  Margin="1" Grid.Column="5" Background="Blue" Grid.Row="7" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="F9"  Margin="1" Grid.Column="5" Background="Blue" Grid.Row="8" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="F10" Margin="1" Grid.Column="5" Background="Blue" Grid.Row="9" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+                                       
+            <Canvas x:Name="G1"  Margin="1" Grid.Column="6" Background="Blue" Grid.Row="0" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="G2"  Margin="1" Grid.Column="6" Background="Blue" Grid.Row="1" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="G3"  Margin="1" Grid.Column="6" Background="Blue" Grid.Row="2" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="G4"  Margin="1" Grid.Column="6" Background="Blue" Grid.Row="3" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="G5"  Margin="1" Grid.Column="6" Background="Blue" Grid.Row="4" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="G6"  Margin="1" Grid.Column="6" Background="Blue" Grid.Row="5" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="G7"  Margin="1" Grid.Column="6" Background="Blue" Grid.Row="6" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="G8"  Margin="1" Grid.Column="6" Background="Blue" Grid.Row="7" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="G9"  Margin="1" Grid.Column="6" Background="Blue" Grid.Row="8" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="G10" Margin="1" Grid.Column="6" Background="Blue" Grid.Row="9" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+                                        
+            <Canvas x:Name="H1"  Margin="1" Grid.Column="7" Background="Blue" Grid.Row="0" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="H2"  Margin="1" Grid.Column="7" Background="Blue" Grid.Row="1" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="H3"  Margin="1" Grid.Column="7" Background="Blue" Grid.Row="2" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="H4"  Margin="1" Grid.Column="7" Background="Blue" Grid.Row="3" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="H5"  Margin="1" Grid.Column="7" Background="Blue" Grid.Row="4" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="H6"  Margin="1" Grid.Column="7" Background="Blue" Grid.Row="5" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="H7"  Margin="1" Grid.Column="7" Background="Blue" Grid.Row="6" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="H8"  Margin="1" Grid.Column="7" Background="Blue" Grid.Row="7" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="H9"  Margin="1" Grid.Column="7" Background="Blue" Grid.Row="8" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="H10" Margin="1" Grid.Column="7" Background="Blue" Grid.Row="9" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+                                       
+            <Canvas x:Name="I1"  Margin="1" Grid.Column="8" Background="Blue" Grid.Row="0" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="I2"  Margin="1" Grid.Column="8" Background="Blue" Grid.Row="1" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="I3"  Margin="1" Grid.Column="8" Background="Blue" Grid.Row="2" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="I4"  Margin="1" Grid.Column="8" Background="Blue" Grid.Row="3" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="I5"  Margin="1" Grid.Column="8" Background="Blue" Grid.Row="4" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="I6"  Margin="1" Grid.Column="8" Background="Blue" Grid.Row="5" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="I7"  Margin="1" Grid.Column="8" Background="Blue" Grid.Row="6" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="I8"  Margin="1" Grid.Column="8" Background="Blue" Grid.Row="7" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="I9"  Margin="1" Grid.Column="8" Background="Blue" Grid.Row="8" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="I10" Margin="1" Grid.Column="8" Background="Blue" Grid.Row="9" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+                                     
+            <Canvas x:Name="J1"  Margin="1" Grid.Column="9" Background="Blue" Grid.Row="0" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="J2"  Margin="1" Grid.Column="9" Background="Blue" Grid.Row="1" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="J3"  Margin="1" Grid.Column="9" Background="Blue" Grid.Row="2" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="J4"  Margin="1" Grid.Column="9" Background="Blue" Grid.Row="3" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="J5"  Margin="1" Grid.Column="9" Background="Blue" Grid.Row="4" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="J6"  Margin="1" Grid.Column="9" Background="Blue" Grid.Row="5" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="J7"  Margin="1" Grid.Column="9" Background="Blue" Grid.Row="6" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="J8"  Margin="1" Grid.Column="9" Background="Blue" Grid.Row="7" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="J9"  Margin="1" Grid.Column="9" Background="Blue" Grid.Row="8" Width="auto" Height="{Binding Width, ElementName=A1}"/>
+            <Canvas x:Name="J10" Margin="1" Grid.Column="9" Background="Blue" Grid.Row="9" Width="auto" Height="{Binding Width, ElementName=A1}"/>
         </Grid>
         <Grid Grid.Row="1" Grid.Column="0">
             <Grid.RowDefinitions>

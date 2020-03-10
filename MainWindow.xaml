@@ -28,7 +28,7 @@
             </Grid>
         </TabItem>
         <TabItem x:Name="PlaceShips" Visibility="Collapsed">
-            <Grid x:Name="test">
+            <Grid x:Name="test2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="50"/>
                     <ColumnDefinition Width="*"/>
@@ -65,7 +65,7 @@
             </Grid>
         </TabItem>
         <TabItem x:Name="Playfield" Visibility="Collapsed">
-            <Grid>
+            <Grid Name="playfieldgrid">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="3*"/>
@@ -89,8 +89,9 @@
                 </Border>
                 <Label Content="Your Turn" Grid.Row="2" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" />
                 <Label Content="Opponents Turn" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                <local:GridSpielfeld x:Name="Schussfeld" Grid.Row="3" Grid.Column="1"  />
-                <local:GridSpielfeld x:Name="SchiffFeld" Grid.Row="3" Grid.Column="3"  />
+                <local:GridSpielfeldNoButton x:Name="SchiffFeld" Grid.Row="3" Grid.Column="1"  />
+                <local:GridSpielfeld x:Name="SchussFeld" Grid.Row="3" Grid.Column="3"  />
+                <local:GridSpielfeldNoButton x:Name="SchussFeldNoTurn" Grid.Row="3" Grid.Column="3" Visibility="Hidden"/>
             </Grid>
         </TabItem>
         <TabItem x:Name="Settings" Visibility="Collapsed">

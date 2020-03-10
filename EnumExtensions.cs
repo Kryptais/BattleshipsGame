@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Schiffeversenken
 {
-    public static class EnumErweiterung
+    public static class EnumExtensions
     {
         public static T GetAttributeOfType<T>(this Enum enumVal) where T : System.Attribute
         {

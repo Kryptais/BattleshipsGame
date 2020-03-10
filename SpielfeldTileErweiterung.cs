@@ -10,7 +10,7 @@ namespace Schiffeversenken
     {
         public static SpielfeldTile At(this List<SpielfeldTile> spielfeldTiles, int reihe, int spalte)
         {
-            return spielfeldTiles.Where(x => x.koordinaten.Reihe == reihe && x.koordinaten.Spalte == spalte).First();
+                return spielfeldTiles.Where(x => x.koordinaten.Reihe == reihe && x.koordinaten.Spalte == spalte).First();
         }
 
         public static List<SpielfeldTile> Reichweite(this List<SpielfeldTile> spielfeldTiles, int startReihe, int startSpalte, int endReihe, int endSpalte)

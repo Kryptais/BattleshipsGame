@@ -21,7 +21,7 @@ namespace Schiffeversenken
         [Description("D")]
         Destroyer,
 
-        [Description("s")]
+        [Description("S")]
         Submarine,
 
         [Description("A")]

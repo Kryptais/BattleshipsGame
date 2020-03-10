@@ -24,6 +24,27 @@ namespace Schiffeversenken
         public GridSpielfeld()
         {
             InitializeComponent();
+            //foreach (Canvas canvas in spielbaresSpielfeld.Children)
+            //{
+            //    canvas.MouseDown += Canvas_MouseDown;
+            //}
+        }
+
+        //private void Canvas_MouseDown(object sender, MouseButtonEventArgs e)
+        //{
+            
+        //    Canvas canvas = sender as Canvas;
+
+
+        //}
+        public List<Canvas> GetGridSpielfeldCanvas()
+        {
+            List<Canvas> result = new List<Canvas>();
+            foreach(Canvas canvas in spielbaresSpielfeld.Children)
+            {
+                result.Add(canvas);
+            }
+            return result;
         }
 
         private void UsercontrolSizeChanged(object sender, SizeChangedEventArgs e)
@@ -37,32 +58,44 @@ namespace Schiffeversenken
         {
             int index = 0;
             String[] alphabet = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J" };
-            for(int reihe = 1; reihe<=10; reihe++)
+            for(int reihe = 0; reihe <= 9; reihe++)
             {
-                string reihenBuchstabe = alphabet[reihe-1];
-                for(int spalte = 1; spalte <=10; spalte++)
+                string reihenBuchstabe = alphabet[reihe];
+                for(int spalte = 0; spalte <= 9; spalte++)
                 {
                     index++;
                     string TileStatus = Spielfeld.SpielfeldTiles.At(reihe, spalte).SchiffsteilStatus;
-                    string TileName = reihenBuchstabe + spalte;
-                    foreach(ToggleButton tb in spielbaresSpielfeld.Children)
+                    string TileName = reihenBuchstabe + (spalte+1);
+                    foreach(Canvas c in spielbaresSpielfeld.Children)
                     {
-                        if(tb.Name == TileName)
+                        if(c.Name == TileName)
                         {
                             if(TileStatus == "0")
                             {
-                                tb.Background = Brushes.Blue;
-                                tb.Content = default;
+
+                                c.Background = Brushes.Blue;
                             }
                             else
                             {
-                                tb.Background = default;
-                                tb.Content = TileStatus;
+                                c.Background = Brushes.Gray;
                             }
+                            TextBox test = new TextBox();
+                            test.Text = TileName;
+                            test.Background = Brushes.White;
 
+                            c.Children.Add(test);
                         }
+
                     }
                 }
+            }
+        }
+        public void updateGUIGegner(Spielfeld Spielfeld)
+        {
+            foreach (Canvas c in spielbaresSpielfeld.Children)
+            {
+
+                c.Background = Brushes.Blue;
             }
         }
     }
