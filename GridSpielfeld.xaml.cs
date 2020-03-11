@@ -79,11 +79,6 @@ namespace Schiffeversenken
                             {
                                 c.Background = Brushes.Gray;
                             }
-                            TextBox test = new TextBox();
-                            test.Text = TileName;
-                            test.Background = Brushes.White;
-
-                            c.Children.Add(test);
                         }
 
                     }

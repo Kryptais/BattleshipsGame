@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 using Schiffeversenken.Schiffe;
 namespace Schiffeversenken
 {
@@ -42,6 +43,10 @@ namespace Schiffeversenken
         public void ZeichneSpielfeldNoButton(GridSpielfeldNoButton gridSpielfeldNoButton)
         {
             gridSpielfeldNoButton.updateGUI(Spielfeld); 
+        }
+        public void ZeichneSpielfeldVonGegner(GridSpielfeld gridSpielfeld)
+        {
+            gridSpielfeld.updateGUIGegner(schussSpielfeld);
         }
         public void bereinigeSpielfeld()
         {
@@ -105,6 +110,7 @@ namespace Schiffeversenken
         }
          public Koordinaten FireShot()
         {
+            
             // Wenn auf dem Spielfeld felder sind die getroffen sind und Nachbarn keine schüsse haben, sollten wir zuerst dadrauf schiessen.
             var getroffeneNachbarn = schussSpielfeld.GetGetroffeneNachbarn();
             Koordinaten koords;
@@ -138,32 +144,58 @@ namespace Schiffeversenken
             return getroffeneNachbarn[NachbarID];
         }
 
-        public SchussErgebnis VerarbeiteSchuss(Koordinaten koords)
+        public SchussErgebnis  VerarbeiteSchuss(Koordinaten koords)
         {
             int index = koords.Reihe + koords.Spalte;
-            SpielfeldTile Tile = Spielfeld.SpielfeldTiles[index];//.At(koords.Reihe, koords.Spalte);
-            if(Tile.istBesetzt == false)
+            SpielfeldTile Tile = Spielfeld.SpielfeldTiles.At(koords.Reihe, koords.Spalte);// [index];//.At(koords.Reihe, koords.Spalte);
+            if(!Tile.istBesetzt)
             {
-                Main.EventBox.Text += Environment.NewLine + Name + " says: \"Miss!\"";
-               // Console.WriteLine(Name + " says: \"Miss!\"");
+                
+                //Main.EventBox.Text += Environment.NewLine + Name + " says: \"Miss!\"";
                 return SchussErgebnis.Miss;
             }
-            var schiff = Schiffe.First(x => x.Teilbelegung == Tile.Teilbelegung);
-            schiff.Treffer++;
-            Main.EventBox.Text += Environment.NewLine + Name + " says: \"Treffer!\"";
-            //Console.WriteLine(Name + " says: \"Hit!\"");
-            if (schiff.istGesunken)
+            else
             {
-                Main.EventBox.Text += Environment.NewLine + Name + " says: \" Du hast mein " + schiff.Name + "versenkt!";
-                //Console.WriteLine(Name + " says: \"You sunk my " + ship.Name + "!\"");
+                var schiff = Schiffe.First(x => x.Teilbelegung == Tile.Teilbelegung);
+                schiff.Treffer++;
+                if (schiff.istGesunken)
+                {
+                    Brush brush = Brushes.Red;
+                    //Main.EventBox.Text += Environment.NewLine + Name + " says: \" Du hast mein " + schiff.Name + " versenkt!";
+                    if(schiff.Teilbelegung == Teilbelegung.AircraftCarrier && this.Name == "AI")
+                    {
+                        Main.ACControl.SetColor(brush);
+                    }
+                    else if (schiff.Teilbelegung == Teilbelegung.Battleship && this.Name == "AI")
+                    {
+                        Main.BSControl.SetColor(brush);
+                    }
+                    else if (schiff.Teilbelegung == Teilbelegung.Cruiser && this.Name == "AI")
+                    {
+                        Main.CControl.SetColor(brush);
+                    }
+                    else if (schiff.Teilbelegung == Teilbelegung.Destroyer && this.Name == "AI")
+                    {
+                        Main.DControl.SetColor(brush);
+                    }
+                    else if (schiff.Teilbelegung == Teilbelegung.Submarine && this.Name == "AI")
+                    {
+                        Main.SControl.SetColor(brush);
+                    }
+                }
+                else
+                {
+                    //Main.EventBox.Text += Environment.NewLine + Name + " says: \"Treffer!\"";
+                }
+                return SchussErgebnis.Hit;
             }
-            return SchussErgebnis.Hit;
+            
         }
 
         public void VerarbeiteSchussErgebniss(Koordinaten koords, SchussErgebnis result)
         {
             int index = koords.Reihe + koords.Spalte;
-            var Tile = schussSpielfeld.SpielfeldTiles[index];//.At(koords.Reihe, koords.Spalte);
+            var Tile = this.schussSpielfeld.SpielfeldTiles.At(koords.Reihe, koords.Spalte);// schussSpielfeld.SpielfeldTiles[index];//.At(koords.Reihe, koords.Spalte);
             switch (result)
             {
                 case SchussErgebnis.Hit:

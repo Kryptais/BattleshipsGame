@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid meet" viewBox="0 0 640 640" width="640" height="640">
+  <defs>
+    <path d="M0 0L640 0L640 640L0 640L0 0Z" id="bXsTIyEaY"></path>
+    <path d="" id="f5wUMwiKyO"></path>
+    <path d="" id="a5T5kluNzU"></path>
+    <path d="" id="h6zOVTwuO"></path>
+    <path d="M640 640L0 0" id="b3LYTCMOAv"></path>
+    <path d="M0 640L640 0" id="m15emY1dTS"></path>
+    <path d="" id="b210AJvW1m"></path>
+  </defs>
+  <g>
+    <g>
+      <g>
+        <use xlink:href="#bXsTIyEaY" opacity="1" fill="#1d2ece" fill-opacity="1"></use>
+      </g>
+      <g>
+        <g>
+          <use xlink:href="#f5wUMwiKyO" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="1"></use>
+        </g>
+      </g>
+      <g>
+        <g>
+          <use xlink:href="#a5T5kluNzU" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="1"></use>
+        </g>
+      </g>
+      <g>
+        <g>
+          <use xlink:href="#h6zOVTwuO" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="7" stroke-opacity="1"></use>
+        </g>
+      </g>
+      <g>
+        <g>
+          <use xlink:href="#b3LYTCMOAv" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="10" stroke-opacity="1"></use>
+        </g>
+      </g>
+      <g>
+        <g>
+          <use xlink:href="#m15emY1dTS" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="10" stroke-opacity="1"></use>
+        </g>
+      </g>
+      <g>
+        <g>
+          <use xlink:href="#b210AJvW1m" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="7" stroke-opacity="1"></use>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

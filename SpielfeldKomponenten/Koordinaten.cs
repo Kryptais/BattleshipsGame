@@ -18,10 +18,10 @@ namespace Schiffeversenken
         }
         public string convertKoordinatenToTileName()
         {
-            int spalte2 = Spalte ;
-            int reihe2 = Reihe+1;
+            int spalte2 = Spalte +1 ;
+            int reihe2 = Reihe;
             string[] alphabet = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J" };
-            string name = alphabet[spalte2] + reihe2;
+            string name = alphabet[reihe2] + spalte2;
             return name;
 
         }

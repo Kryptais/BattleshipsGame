@@ -15,13 +15,13 @@ namespace Schiffeversenken
 
         public List<Koordinaten> GetGetroffeneNachbarn()
         {
-            List<SpielfeldTile> spielfeldTiles = new List<SpielfeldTile>();
+            List<SpielfeldTile> spielfeldTilesSf = new List<SpielfeldTile>();
             var trefferSammlung = SpielfeldTiles.Where(x => x.Teilbelegung == Teilbelegung.Getroffen);
             foreach(var treffer in trefferSammlung)
             {
-                spielfeldTiles.AddRange(GetNachbarn(treffer.koordinaten).ToList());
+                spielfeldTilesSf.AddRange(GetNachbarn(treffer.koordinaten).ToList());
             }
-            return spielfeldTiles.Distinct().Where(x => x.Teilbelegung == Teilbelegung.Leer).Select(x => x.koordinaten).ToList();
+            return spielfeldTilesSf.Distinct().Where(x => x.Teilbelegung == Teilbelegung.Leer).Select(x => x.koordinaten).ToList();
         }
         public List<SpielfeldTile> GetNachbarn(Koordinaten koordinaten)
         {
@@ -37,6 +37,10 @@ namespace Schiffeversenken
                 spielfeldTiles.Add(SpielfeldTiles.At(reihe - 1, spalte));
             }
             if(reihe < 9)
+            {
+                spielfeldTiles.Add(SpielfeldTiles.At(reihe +1, spalte));
+            }
+            if(spalte < 9)
             {
                 spielfeldTiles.Add(SpielfeldTiles.At(reihe, spalte + 1));
             }

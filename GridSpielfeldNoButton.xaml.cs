@@ -37,27 +37,27 @@ namespace Schiffeversenken
         {
             int index = 0;
             String[] alphabet = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J" };
-            for (int reihe = 0; reihe == 9; reihe++)
+            for (int reihe = 0; reihe <= 9; reihe++)
             {
                 string reihenBuchstabe = alphabet[reihe];
-                for (int spalte = 0; spalte == 9; spalte++)
+                for (int spalte = 0; spalte <= 9; spalte++)
                 {
                     index++;
                     string TileStatus = Spielfeld.SpielfeldTiles.At(reihe, spalte).SchiffsteilStatus;
-                    string TileName = reihenBuchstabe + spalte;
-                    List<Canvas> canvas = new List<Canvas>();
+                    string TileName = reihenBuchstabe + (spalte+1);
                     foreach (Canvas c in spielbaresSpielfeld.Children)
                     {
-                        canvas.Add(c);
-                    }
-                    Canvas test = canvas.Where(x => x.Name == TileName).First();
-                    if (TileStatus == "0")
-                    {
-                        test.Background = Brushes.Blue;
-                    }
-                    else 
-                    {
-                        test.Background = Brushes.Gray;
+                        if(c.Name == TileName)
+                        {
+                            if (TileStatus == "0")
+                            {
+                                c.Background = Brushes.Blue;
+                            }
+                            else
+                            {
+                                c.Background = Brushes.Gray;
+                            }
+                        }
                     }
                 }
             }

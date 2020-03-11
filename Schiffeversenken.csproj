@@ -55,6 +55,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BattleshipControl.xaml.cs">
+      <DependentUpon>BattleshipControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AircraftCarrierControl.xaml.cs">
+      <DependentUpon>AircraftCarrierControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CruiserControl.xaml.cs">
+      <DependentUpon>CruiserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DestroyerControl.xaml.cs">
+      <DependentUpon>DestroyerControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Enum.cs" />
     <Compile Include="EnumExtensions.cs" />
     <Compile Include="alt\GameAI.cs" />
@@ -64,6 +76,7 @@
     <Compile Include="GridSpielfeld.xaml.cs">
       <DependentUpon>GridSpielfeld.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Marked.cs" />
     <Compile Include="Schiffe\AircraftCarrier.cs" />
     <Compile Include="Schiffe\Battleship.cs" />
     <Compile Include="Schiffe\Cruiser.cs" />
@@ -79,6 +92,25 @@
     <Compile Include="alt\Schiff.cs" />
     <Compile Include="SpielfeldTileErweiterung.cs" />
     <Compile Include="SpielfeldKomponenten\Spielfeld.cs" />
+    <Compile Include="SubmarineControl.xaml.cs">
+      <DependentUpon>SubmarineControl.xaml</DependentUpon>
+    </Compile>
+    <Page Include="BattleshipControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AircraftCarrierControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CruiserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DestroyerControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="GridSpielfeldNoButton.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -99,6 +131,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="SubmarineControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="alt\GameField.cs" />
@@ -128,5 +164,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\XMLFile1.xml" />
+    <Resource Include="Resources\untitled.png" />
+    <Content Include="Resources\untitled.svg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

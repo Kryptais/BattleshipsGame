@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Schiffeversenken"
+        xmlns:schiffe="clr-namespace:Schiffeversenken.Schiffe"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" MinHeight="500" MinWidth="800">
     <TabControl x:Name="tabcontrol">
@@ -42,24 +43,13 @@
                 </Grid.RowDefinitions>
                 <Label Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" HorizontalContentAlignment="Center" FontSize="25" Content="Place Ships"/>
                 <Grid Grid.Row="1" Grid.Column="1" >
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <ToggleButton Grid.Column="1" Grid.Row="0" Content="Battleships" FontSize="20" Margin="10" IsEnabled="False"/>
-                    <ToggleButton Grid.Column="1" Grid.Row="1" Content="Airship-Carrier" FontSize="20" Margin="10" IsEnabled="False"/>
-                    <ToggleButton Grid.Column="1" Grid.Row="2" Content="Cruiser" FontSize="20" Margin="10" IsEnabled="False"/>
-                    <ToggleButton Name="testbutton" Grid.Column="1" Grid.Row="3" Content="Destroyer" FontSize="20" Margin="10" IsEnabled="False"/>
-                    <!--<ToggleButton Grid.Column="1" Grid.Row="4" Content="Submariene" FontSize="20" Margin="10" IsEnabled="False"/>-->
-                    <Button Grid.Column="1" Grid.Row="4" Content="Random Placement" FontSize="20" Margin="10" Click="Place_Ships_Random"/>
-                    <Button x:Name="FinishPlacement" Grid.Column="1" Grid.Row="5" Content="Finish" Margin="10" FontSize="20" Click="Start_Game" IsEnabled="False"/>
+                    <Button Name="RandomPlacement" Grid.Row="0" Content="Random Placement" FontSize="20" Margin="10" Click="Place_Ships_Random"/>
+                    <Button x:Name="FinishPlacement" Grid.Row="1" Content="Finish" Margin="10" FontSize="20" Click="Start_Game" IsEnabled="False"/>
                 </Grid>
                 <local:GridSpielfeld x:Name="TestPLayerSpielfeld" Grid.Row="1" Grid.Column="2"  />
             </Grid>
@@ -82,20 +72,54 @@
                     <RowDefinition Height="60"/>
                 </Grid.RowDefinitions>
                 <Label Content="Battleships:" FontSize="30" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="3"/>
-                <Border Grid.Column="4" Grid.Row="3" BorderBrush="Black" BorderThickness="1" Width="auto" Height="{Binding ActualHeight, ElementName=Player1}" x:Name="Border1">
-                    <ScrollViewer>
-                        <TextBox x:Name="EventBox" Text="test" TextWrapping="Wrap"  Height="auto" />
-                    </ScrollViewer>
-                </Border>
-                <Label Content="Your Turn" Grid.Row="2" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                <Label Content="Opponents Turn" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                <Label Content="Gegnerisches Schiffe" Grid.Row="2" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                <Label Content="Deine Schiffe" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" />
                 <local:GridSpielfeldNoButton x:Name="SchiffFeld" Grid.Row="3" Grid.Column="1"  />
                 <local:GridSpielfeld x:Name="SchussFeld" Grid.Row="3" Grid.Column="3"  />
                 <local:GridSpielfeldNoButton x:Name="SchussFeldNoTurn" Grid.Row="3" Grid.Column="3" Visibility="Hidden"/>
+                <Grid Grid.Column="4" Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBox x:Name="EventBox" Text="Runde: 1" TextWrapping="Wrap"  Height="auto" BorderBrush="White" FontSize="25" />
+                    <local:AircraftCarrierControl x:Name="ACControl" Grid.Row="1" />
+                    <local:BattleshipControl x:Name="BSControl" Grid.Row="2" />
+                    <local:CruiserControl x:Name="CControl" Grid.Row="3"/>
+                    <local:DestroyerControl x:Name="DControl" Grid.Row="4"/>
+                    <local:SubmarineControl x:Name="SControl" Grid.Row="5"/>
+                </Grid>
             </Grid>
         </TabItem>
         <TabItem x:Name="Settings" Visibility="Collapsed">
 
+        </TabItem>
+        <TabItem Name="AfterGameTabMenue" Visibility="Collapsed">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Grid.Column="1" Grid.Row="0" Name="GameOverLabel"  Content="Game Over" DockPanel.Dock="Top" Margin="10" HorizontalAlignment="Center" FontSize="30"/>
+                <Button Grid.Column="1" Grid.Row="1" Name="BackToMenue" Content="Back to Menue" DockPanel.Dock="Top" FontSize="30" Margin="10" Width="auto" Click="BackToMenue_Click"/>
+                <Button  Grid.Column="1" Grid.Row="2" Name="PlayAgain" Content="Play again" DockPanel.Dock="Top" Margin="10" FontSize="30" Click="PlayAgain_Click"/>
+                <Button Grid.Column="1" Grid.Row="3" Name="ExitAfterGame" Content="Exit Game" Margin="10" FontSize="30" Click="ExitAfterGame_Click"/>
+            </Grid>
         </TabItem>
     </TabControl>
 </Window>

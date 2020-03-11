@@ -16,7 +16,7 @@ namespace Schiffeversenken
 
         public SpielfeldTile(int reihe, int spalte)
         {
-            this.name = alphabet[reihe] + spalte;
+            this.name = alphabet[reihe] + (spalte+1);
             koordinaten = new Koordinaten(reihe, spalte);
             Teilbelegung = Teilbelegung.Leer;
         }
@@ -43,15 +43,8 @@ namespace Schiffeversenken
         {
             get
             {
-                bool result = false;
-                if ((koordinaten.Reihe % 2 == 0 && koordinaten.Spalte % 2 == 0)
-                    || (koordinaten.Reihe % 2 == 1 && koordinaten.Spalte % 2 == 1))
-                {
-                    result = true;
-
-                }
-
-                return result;
+                return (koordinaten.Reihe % 2 == 0 && koordinaten.Spalte % 2 == 0)
+                    || (koordinaten.Reihe % 2 == 1 && koordinaten.Spalte % 2 == 1);
             }
         }
     }

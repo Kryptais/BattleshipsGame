@@ -23,13 +23,12 @@ namespace Schiffeversenken
     public partial class MainWindow : Window
     {
         public Random random = new Random();
-        Spiel spiel;
+        Spiel spiel;    
         public MainWindow()
         {
             InitializeComponent();
             spiel = new Spiel(this);
-            List<Canvas> listCanvas = SchussFeld.GetGridSpielfeldCanvas();
-            foreach(Canvas canvas in listCanvas)
+            foreach(Canvas canvas in SchussFeld.spielbaresSpielfeld.Children)
             {
                 canvas.MouseDown += Canvas_MouseDown;
             }
@@ -63,7 +62,15 @@ namespace Schiffeversenken
             String[] alphabet = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J" };
                 string test = name.Substring(0, 1);
                 int reihe = Array.IndexOf(alphabet, test);
-                string test2 = name.Substring(1, 1);
+            string test2 = "";
+            if(name.Length == 2)
+            {
+                 test2 = name.Substring(1, 1);
+            }
+            else if(name.Length == 3)
+            {
+                 test2 = name.Substring(1, 2);
+            }
                 int spalte = (int.Parse(test2)-1);
 
                 Koordinaten result = new Koordinaten(reihe, spalte);
@@ -97,12 +104,57 @@ namespace Schiffeversenken
         {
             spiel.Spieler2.bereinigeSpielfeld();
             spiel.Spieler2.platziereSchiffe();
-            spiel.Spieler2.ZeichneSpielfeld(SchussFeld);
+            spiel.Spieler2.ZeichneSpielfeldVonGegner(SchussFeld);
 
             spiel.Spieler1.bereinigeSpielfeld();
             spiel.Spieler1.platziereSchiffe();
             spiel.Spieler1.ZeichneSpielfeld(TestPLayerSpielfeld);
             FinishPlacement.IsEnabled = true;
+        }
+
+        private void ExitAfterGame_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void PlayAgain_Click(object sender, RoutedEventArgs e)
+        {
+            ClearGame();
+            tabcontrol.SelectedItem = PlaceShips;
+        }
+
+        private void BackToMenue_Click(object sender, RoutedEventArgs e)
+        {
+            tabcontrol.SelectedItem = MainMenu;
+        }
+        public void ClearGame()
+        {
+            spiel = null;
+            spiel = new Spiel(this);
+            EventBox.Text = "";
+            foreach (Canvas canvas in SchussFeld.spielbaresSpielfeld.Children)
+            {
+                canvas.MouseDown += Canvas_MouseDown;
+                canvas.Children.Clear();
+            }
+            foreach (Canvas canvas in TestPLayerSpielfeld.spielbaresSpielfeld.Children)
+            {
+                canvas.Background = Brushes.Blue;
+                canvas.MouseDown += Canvas_MouseDown;
+            }
+            foreach (Canvas canvas in SchiffFeld.spielbaresSpielfeld.Children)
+            {
+                canvas.Children.Clear();
+                canvas.Background = Brushes.Blue;
+            }
+            FinishPlacement.IsEnabled = false;
+            Brush brush = Brushes.Gray;
+            ACControl.SetColor(brush);
+            BSControl.SetColor(brush);
+            CControl.SetColor(brush);
+            DControl.SetColor(brush);
+            SControl.SetColor(brush);
+            
         }
     }
 

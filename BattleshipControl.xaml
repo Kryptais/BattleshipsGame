@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="Schiffeversenken.BattleshipControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Schiffeversenken"
+             mc:Ignorable="d" >
+    <Grid x:Name="Grid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Canvas Name="Feld1" Background="Gray" Margin="1" Grid.Column="0" MinWidth="20" Height="{Binding MinWidth, ElementName=Feld1}"/>
+        <Canvas Name="Feld2" Background="Gray" Margin="1" Grid.Column="1" MinWidth="20" Height="{Binding ActualHeight, ElementName=Feld1}"/>
+        <Canvas Name="Feld3" Background="Gray" Margin="1" Grid.Column="2" MinWidth="20" Height="{Binding ActualHeight, ElementName=Feld1}"/>
+        <Canvas Name="Feld4" Background="Gray" Margin="1" Grid.Column="3" MinWidth="20" Height="{Binding ActualHeight, ElementName=Feld1}"/>
+    </Grid>
+</UserControl>
+
